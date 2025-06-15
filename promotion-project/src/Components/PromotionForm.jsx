@@ -18,11 +18,45 @@ export default function PromotionForm({ onAdd }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="promo-form">
-      <input name="title" placeholder="Cím" onChange={handleChange} value={form.title} required />
-      <input name="description" placeholder="Leírás"  onChange={handleChange} value={form.description} required />
-      <input name="validUntil" type="date" onChange={handleChange} value={form.validUntil}  required />
-      <button type="submit">Mentés</button>
+    <form onSubmit={handleSubmit} className="card p-4 mb-4 shadow-sm">
+      <div className="mb-3">
+        <label className="form-label">Cím</label>
+        <input
+          type="text"
+          name="title"
+          className="form-control"
+          placeholder="Cím..."
+          value={form.title}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div className="mb-3">
+        <label className="form-label">Leírás</label>
+        <input
+          type="text"
+          name="description"
+          className="form-control"
+          placeholder="Leírás..."
+          value={form.description}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div className="mb-3">
+        <label className="form-label">Érvényesség dátuma</label>
+        <input
+          type="date"
+          name="validUntil"
+          className="form-control"
+          value={form.validUntil}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <button type="submit" className="btn btn-danger w-100 mt-4">
+        Mentés
+      </button>
     </form>
   );
 }

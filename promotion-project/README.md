@@ -1,12 +1,44 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+Funkciók:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-  Új elem hozzáadása (Cím, Leírás, Érvényességi dátum)
+-  Elemek listázása
+-  Törlés gombbal egyes elemek eltávolítása
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Telepítés:
+
+1. klónozd a repót
+`bash
+git clone https://github.com/DmjnPeter/Promotion-project.git
+cd promotion-manager
+
+2. Telepítsd a szükséges csomagokat
+npm install
+
+3. Indítsd el a dev szervert
+npm run dev
+
+Az alkalmazás elérhető lesz a http://localhost:5173 címen.
+
+
+Használt technológiák:
+-React (Vite)
+-Bootstrap 5
+-crudcrud.com
+
+📁 src
+├── App.jsx
+├── Components/
+│   ├── PromotionForm.jsx
+│   ├── PromotionList.jsx
+│   └── PromotionItem.jsx
+├── Services/
+│   └── api.js
+├── index.css
+
+
+FONTOS: A crudcrud.com API kulcsa 24 óra után lejár. Új kulcsot kell generálni, és az api.js fájlban módosítani kell a BASE_URL-t:
+
+const BASE_URL = "https://crudcrud.com/api/292fd714cabd4bbcb2a3b12ed14cac60/promotions";

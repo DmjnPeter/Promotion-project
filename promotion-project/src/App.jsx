@@ -44,19 +44,19 @@ function App() {
   }
 
   return (
-    <div className="container">
-      
-      <h1>Promóciók</h1>
-      <PromotionForm onAdd={handleAdd} />
-      {loading ? (
-        <p>Betöltés...</p>
-      ) : error ? (
-        <p style={{ color: "red" }}>{error}</p>
-      ) : (
-        <PromotionList promotions={promotions} onDelete={handleDelete} />
-      )}
-    </div>
-  );
+  <div className="container py-5">
+    <h1 className="mb-4">Promóciók</h1>
+    <PromotionForm onAdd={handleAdd} />
+    {loading ? (
+      <div className="alert alert-info text-dark">Betöltés...</div>
+    ) : error ? (
+      <div className="alert alert-danger text-dark">{error}</div>
+    ) : (
+      <PromotionList promotions={promotions} onDelete={handleDelete} />
+    )}
+  </div>
+);
+
 }
 
 export default App;
