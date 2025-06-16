@@ -18,7 +18,7 @@ export default function PromotionForm({ onAdd }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="card p-4 mb-4 shadow-sm">
+    <form onSubmit={handleSubmit} className="p-4 mb-4">
       <div className="mb-3">
         <label className="form-label">Cím</label>
         <input
